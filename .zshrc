@@ -5,25 +5,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.zsh/zsh-autosuggestions/git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# function clear() {
-#   clear
-#   neofetch()
-# }
+clear() {
+    ~/.zsh/clear.sh
+}
 
 typeset -g POWERLEVEL9K_INSTANeT_PROMPT=quiet
-neofetch
+# neofetch
 # alias clear='clear'; 'neofetch'
-
-clear() {
-    ~/Documents/clear.sh
-}
 
 power() {
   upower -i /org/freedesktop/UPower/devices/battery_BAT0
@@ -35,15 +30,6 @@ cloudflare() {
 
 alias myip='curl http://ipecho.net/plain; echo'
 alias distro='cat /etc/*-release'
-alias reload='source ~/.zshrc'.
+alias reload='source ~/.zshrc'
 
-
-
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
-# bun completions
-[ -s "/home/hepmihir/.bun/_bun" ] && source "/home/hepmihir/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/home/hepmihir/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
