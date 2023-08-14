@@ -1,3 +1,3 @@
 #!/bin/bash
 clear
-neofetch
+bash ~/neofetch/neofetch
