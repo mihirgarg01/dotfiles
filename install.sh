@@ -58,7 +58,7 @@ if ! command -v yay &> /dev/null; then
 fi
 
 # Install some packages
-yay -S neofetch fastfetch --noconfirm
+yay -S neofetch fastfetch cloudflared upower --noconfirm
 
 # Append source lines to .zshrc
 echo 'source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
