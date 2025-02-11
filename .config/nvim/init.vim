@@ -1,6 +1,22 @@
 " Specify a directory for plugins
 call plug#begin('~/.config/nvim/plugged')
 
+" Add CoC plugin manager
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Add vim-audo-dir ato monitor the filesystem for changes, refreshing NERDTree automatically
+Plug 'Xuyuanp/vim-auto-dir'
+
+" Refresh NERDTree when entering Vim or switching buffers
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' | execute "normal! \<C-w>\<C-w>" | execute ":NERDTreeRefreshRoot" | execute "normal! \<C-w>\<C-w>" | endif
+
+" Use vim-auto-dir to refresh NERDTree automatically
+autocmd VimEnter * call AutoDir('NERDTree', ':NERDTreeFocus', ':NERDTreeClose', ':NERDTree')
+
+" Auto-close NERDTree if it's the only window left
+autocmd BufEnter * if winnr('$') == 1 && exists('t:NERDTreeBufName') && bufname() == t:NERDTreeBufName | q | endif
+
+
 " Plugin definitions
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

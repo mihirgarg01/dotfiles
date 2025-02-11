@@ -14,6 +14,10 @@ clear() {
     ~/clear.sh
 }
 
+ls() {
+    command ls --color=auto "$@"
+}
+
 typeset -g POWERLEVEL9K_INSTANeT_PROMPT=quiet
 
 power() {
@@ -37,3 +41,13 @@ source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Created by `pipx` on 2024-07-10 10:06:09
+export PATH="$PATH:/home/mihir/.local/bin"
+
+# bun completions
+[ -s "/home/mihir/.bun/_bun" ] && source "/home/mihir/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
