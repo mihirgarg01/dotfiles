@@ -18,6 +18,10 @@ ls() {
     command ls --color=auto "$@"
 }
 
+windows() {
+    ~/windows.sh
+}
+
 typeset -g POWERLEVEL9K_INSTANeT_PROMPT=quiet
 
 power() {
@@ -51,3 +55,10 @@ export PATH="$PATH:/home/mihir/.local/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Bitwarden SSH
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"  # added Aug 15
